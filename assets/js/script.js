@@ -26,16 +26,17 @@ function createTimeBlocks() {
         if (i <= 3) {
             let timeStamp = i + 9;
             for (let i = 0; i < 3; i++) {
-                let newItem = document.createElement("td");
                 if (i === 0) {
+                    let newItem = document.createElement("td");
                     newItem.classList.add("hour");
                     newItem.textContent = timeStamp;
                     newRow.appendChild(newItem);
                 } else if (i === 1) {
+                    let newItem = document.createElement("input");
                     newItem.classList.add("time-block");
-                    newItem.textContent = "MAKE THIS A TEXT INPUT";
                     newRow.appendChild(newItem);
                 } else {
+                    let newItem = document.createElement("button");
                     newItem.classList.add("saveBtn");
                     newItem.textContent = "Save";
                     newRow.appendChild(newItem);
@@ -44,16 +45,17 @@ function createTimeBlocks() {
         } else {
             let timeStamp = i - 3;
             for (let i = 0; i < 3; i++) {
-                let newItem = document.createElement("td");
                 if (i === 0) {
+                    let newItem = document.createElement("td");
                     newItem.classList.add("hour");
                     newItem.textContent = timeStamp;
                     newRow.appendChild(newItem);
                 } else if (i === 1) {
+                    let newItem = document.createElement("input");
                     newItem.classList.add("time-block");
-                    newItem.textContent = "MAKE THIS A TEXT INPUT";
                     newRow.appendChild(newItem);
                 } else {
+                    let newItem = document.createElement("button");
                     newItem.classList.add("saveBtn");
                     newItem.textContent = "Save";
                     newRow.appendChild(newItem);
