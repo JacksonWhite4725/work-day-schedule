@@ -7,6 +7,7 @@ let timeBlockContainer = document.getElementById("time-container");
 function pageStart() {
     setDate();
     createTimeBlocks();
+    checkHour();
 }
 
 // Set date and assign value to timeDisplay
@@ -16,6 +17,7 @@ function setDate() {
     dateDisplay.textContent = day;
 }
 
+// Creates the time blocks that display all working hours, allow for inputs, and creates save buttons.
 function createTimeBlocks() {
     let timeTable = document.createElement("table");
     timeTable.id = "time-table";
@@ -63,6 +65,29 @@ function createTimeBlocks() {
             }
         }
         timeTable.appendChild(newRow);
+    }
+}
+
+function checkHour() {
+    let hour = document.getElementsByClassName("hour");
+    let hourArray = [];
+    for (let i = 0; i < hour.length; i++) {
+        if (parseInt(hour[i].textContent) > 5) {
+            hourArray.push(parseInt(hour[i].textContent));
+        } else {
+            hourArray.push(parseInt(hour[i].textContent) + 12)
+        }
+    }
+    let date = new Date();
+    let currentHour = date.getHours();
+    for (let i = 0; i < hourArray.length; i++) {
+        if (hourArray[i] < currentHour) {
+            console.log("Past hour");
+        } else if (hourArray[i] === currentHour) {
+            console.log("Current hour");
+        } else {
+            console.log("Future hour");
+        }
     }
 }
 
