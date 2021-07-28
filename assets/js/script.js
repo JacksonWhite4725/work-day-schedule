@@ -68,6 +68,7 @@ function createTimeBlocks() {
     }
 }
 
+// Checks the hour and changes colors based on timing
 function checkHour() {
     let hour = document.getElementsByClassName("hour");
     let hourArray = [];
@@ -80,13 +81,15 @@ function checkHour() {
     }
     let date = new Date();
     let currentHour = date.getHours();
+    let timeBlock = document.getElementsByClassName("time-block");
+    console.log(timeBlock);
     for (let i = 0; i < hourArray.length; i++) {
         if (hourArray[i] < currentHour) {
-            console.log("Past hour");
+            timeBlock[i].classList.add("past");
         } else if (hourArray[i] === currentHour) {
-            console.log("Current hour");
+            timeBlock[i].classList.add("present");
         } else {
-            console.log("Future hour");
+            timeBlock[i].classList.add("future");
         }
     }
 }
