@@ -82,7 +82,6 @@ function checkHour() {
     let date = new Date();
     let currentHour = date.getHours();
     let timeBlock = document.getElementsByClassName("time-block");
-    console.log(timeBlock);
     for (let i = 0; i < hourArray.length; i++) {
         if (hourArray[i] < currentHour) {
             timeBlock[i].classList.add("past");
@@ -94,4 +93,5 @@ function checkHour() {
     }
 }
 
-pageStart()
+pageStart();
+
